@@ -60,3 +60,9 @@ REFERENCES agro.products(id)
 
 ALTER TABLE agro.order_details
 add CONSTRAINT PK_orderDetails PRIMARY KEY (order_id, product_id)
+
+EXEC sp_rename 'agro.FK_Orders_Customer', 'FK_Order_Customer', 'OBJECT';
+EXEC sp_rename 'agro.FK_products_categories', 'FK_Product_Category', 'OBJECT';
+EXEC sp_rename 'agro.FK_orderDetails_order', 'FK_OrderDetail_Order', 'OBJECT';
+EXEC sp_rename 'agro.FK_orderDetails_product', 'FK_OrderDetail_Product', 'OBJECT';
+EXEC sp_rename 'agro.PK_orderDetails', 'PK_OrderDetail', 'OBJECT';
