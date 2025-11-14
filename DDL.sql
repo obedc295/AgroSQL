@@ -31,10 +31,10 @@ create table agro.customers(
     , email NVARCHAR(100) UNIQUE NOT NULL
 )
 
-
+---ESTA TABLA SE ELIMINA PARA ARREGLAR EL MODELO DE DATOS
 create table agro.order_details(
       order_id INT NOT NULL
-    , product_id INT NOT NULL
+    , product_id INT NOT NULL  ---El nuevo cambio usa product_lot_id
     , quantity DECIMAL(10, 2) NOT NULL
     , historical_sale_price DECIMAL(10, 2) NOT NULL
     , subtotal DECIMAL(10, 2) NOT NULL
