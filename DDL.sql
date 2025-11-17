@@ -52,3 +52,7 @@ REFERENCES agro.products(id);
 -- Ej: No puede haber "Urea 46%" dos veces en "Fertilizantes"
 ALTER TABLE agro.products 
 ADD CONSTRAINT UQ_Product_Category_Name UNIQUE (category_id, name);
+
+-- Agregar timestamp exacto
+ALTER TABLE agro.product_lots 
+ADD created_datetime DATETIME2 NOT NULL DEFAULT GETDATE();
